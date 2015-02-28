@@ -1,0 +1,20 @@
+#adminmenu .wp-not-current-submenu .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu {
+	z-index: 1000;
+}
+/*google-analytics-async - block advanced stuff for network admin
+#ga-network-settings .ga-admin-page-tracking, #ga-network-settings h3.ga-advanced-tracking, #ga-network-settings .ga-display-advertising, #ga-network-settings .ga-tracking-method, #ga-network-settings .ga-minimum-pro-stats, #ga-network-settings .ga-minimum-pro-features {
+	display: none;
+}
+*/
+/*google-analytics-async - block advanced stuff for site admin */
+#ga-site-settings .ga-advanced-tracking {
+	display: none;
+}
+/*google-analytics-async - block prosite stuff */
+#ga-site-settings .ga-minimum-pro-features, #ga-site-settings .ga-minimum-pro-stats {
+	display: none;
+}
+/*site privacy options remove pro site related stuff*/
+#sitewide_privacy_non_pro_forced_value_row, #sitewide_privacy_non_pro_force_row, #sitewide_privacy_pro_only_row {
+	display: none;
+}

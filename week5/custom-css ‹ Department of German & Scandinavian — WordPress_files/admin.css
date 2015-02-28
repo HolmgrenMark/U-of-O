@@ -1,0 +1,30 @@
+.color-select label.hum-light {
+  background-color: #99C4C7;
+}
+.color-select label.hum-med {
+  background-color: #6699CC;
+}
+.color-select label.hum-dark {
+  background-color: #1C355E;
+}
+.color-select label.ss-light {
+  background-color: #A9AD00;
+}
+.color-select label.ss-med {
+  background-color: #648C1C;
+}
+.color-select label.ss-dark {
+  background-color: #2A5135;
+}
+.color-select label.ns-light {
+  background-color: #F4C400;
+}
+.color-select label.ns-med {
+  background-color: #DBAA00;
+}
+.color-select label.ns-dark {
+  background-color: #802629;
+}
+.color-select label.no-color {
+  background-color: #585958;
+}

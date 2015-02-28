@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file://localhost/Users/Mark/Desktop/CIS115/as%207/videos.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Local Storage</title>
+    <meta charset="utf-8">
+<style>
+    .header{
+        background: #25A6E1;
+        box-shadow: 0px 2px 4px #8D8D8D;
+        margin: 0px 0px 11px;
+    }
+    h1{
+        margin: 0px;
+        padding: 17px 0px 17px 0px;
+        font-size: 25px;
+        color: #FFF;
+    }  
+    .outer{
+        width: 95%;
+        margin: 0 auto;
+    }
+    .div2{
+        width: 432px;
+    }
+    
+    html, body{
+            width: 100%;
+            color:white;
+            font-family:'Helvetica Neue',sans-serif;
+            margin: 0px;
+            padding: 0px;
+    }
+
+    button:hover{
+        background: rgba(54, 180, 239, 1);
+        box-shadow: 2px 2px 8px rgba(141, 141, 141, 1);
+        border:1px solid rgba(54, 180, 239, 1);
+    }
+    button {
+        background: #25A6E1;
+        padding:8px 13px;
+        color:#fff;
+        font-family:'Helvetica Neue',sans-serif;
+        font-size:17px;
+        border-radius:4px;
+        -moz-border-radius:4px;
+        -webkit-border-radius:4px;
+        border:1px solid #25A6E1;
+        float: right;
+        margin: 8px 8px 0px 0px;
+        cursor:pointer;
+        outline: none;
+        }    
+
+    input {
+        font-family:'Helvetica Neue',sans-serif;
+        padding:8px 13px;
+        font-size:17px;
+        border-radius:4px;
+        -moz-border-radius:4px;
+        -webkit-border-radius:4px;
+        border:1px solid #1A87B9;
+        width: 397px;
+        margin-top: 8px;
+        outline: medium none;
+        height: 24px;   
+        } 
+
+   </style>
+<script>  
+
+window.onload = init;
+function init(){
+    var first = localStorage['first']
+    var second = localStorage['second']
+    var third = localStorage['third']
+    document.getElementById('firstInput').value = notEmpty(first);
+    document.getElementById('secondInput').value = notEmpty(second);
+    document.getElementById('thirdInput').value = notEmpty(third);
+    alerting(stringMaker(first,second,third));
+}
+
+
+function notEmpty(value){
+    if (value == undefined) {
+        return ''
+    }
+    else{
+        return value
+    };
+
+
+}
+
+function removeLocal(){
+    localStorage.removeItem('first');
+    localStorage.removeItem('second');
+    localStorage.removeItem('third');
+    document.getElementById('firstInput').value = '';
+    document.getElementById('secondInput').value = '';
+    document.getElementById('thirdInput').value = '';
+
+}
+
+function stringMaker(first,second,third){
+    str = ''
+    arr = [first, second, third]
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == '' || arr[i] == undefined){       
+        } else {
+            str += arr[i
+]+'\n'   
+        };      
+    };
+    return str
+
+}
+
+function alerting(str){  
+    if (str != ''){
+        alert(str)
+    };
+
+}
+
+
+function alertFields(){
+    var first = document.getElementById('firstInput').value;
+    var second = document.getElementById('secondInput').value;
+    var third = document.getElementById('thirdInput').value;
+    alerting(stringMaker(first,second,third));
+    localStorage.setItem('first', first)
+    localStorage.setItem('second', second)
+    localStorage.setItem('third', third)
+   
+    
+}
+</script>
+    
+</head> 
+<body>
+<div class="header">
+<div class="outer">
+<div class="div2">
+    <h1>Local Storage Thingy</h1>
+</div>  
+</div>  
+</div>
+<div class="outer">
+    <div class="div2">
+    <input type="text" id="firstInput" value="" placeholder="First Text Field"> 
+    <input type="text" id="secondInput" value="" placeholder="Second Text Field">   
+    <input type="text" id="thirdInput" value="" placeholder="Third Text Field">   
+    <button onclick="alertFields();">Alert Fields</button>
+    <button onclick="removeLocal();">Remove</button> 
+    </div> 
+</div>
+
+
+
+   
+
+
+
+
+</body></html>
